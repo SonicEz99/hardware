@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDetection();
 });
 
-const URL = "/my_model/";  // แก้ไขพาธให้ถูกต้อง
+const URL = "./my_model/";  // แก้ไขพาธให้ถูกต้อง
 let model, webcam, labelContainer, maxPredictions;
 
 // ข้อมูลอุปกรณ์
