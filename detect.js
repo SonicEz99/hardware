@@ -45,7 +45,7 @@ const hardwareInfo = {
 เหมาะสำหรับการเล่นเกม ประชุมทางไกล และฟังเพลง
 `
     },
-    "Keyboard": {
+    "keyboard": {
         name: "แป้นพิมพ์",
         image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/keyboard.jpg",
         description: `อุปกรณ์อินพุตที่ใช้พิมพ์ตัวอักษร คำสั่ง และควบคุมคอมพิวเตอร์
