@@ -76,7 +76,10 @@ const hardwareInfo = {
 มีผลโดยตรงต่อความเร็วและความสามารถในการทำงานหลายอย่างพร้อมกัน`
     }
 };
-
+document.getElementById("camera-select").addEventListener("change", () => {
+    webcam?.stop(); // stop old camera
+    initDetection(); // restart with new camera
+});
 async function initDetection() {
     try {
         updateStatus("กำลังโหลดโมเดล...", "loading");
