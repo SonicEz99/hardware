@@ -10,68 +10,68 @@ let model, webcam, labelContainer, maxPredictions;
 const hardwareInfo = {
     "Cables": {
         name: "สายเคเบิล",
-        image: "/images/cables.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Cables.jpg",
         description: `สายสัญญาณที่ใช้เชื่อมต่ออุปกรณ์คอมพิวเตอร์ต่าง ๆ เช่น สาย USB, HDMI, LAN เป็นต้น
 มีหน้าที่ในการส่งข้อมูลหรือพลังงานระหว่างอุปกรณ์เพื่อให้การทำงานราบรื่นและต่อเนื่อง`
     },
     "Case": {
         name: "เคสคอมพิวเตอร์",
-        image: "/images/case.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Case.jpg",
         description: `โครงสร้างหรือตู้สำหรับบรรจุชิ้นส่วนของคอมพิวเตอร์ เช่น เมนบอร์ด, PSU, การ์ดจอ
 ช่วยปกป้องอุปกรณ์ภายในจากฝุ่น ความชื้น และช่วยจัดระเบียบภายในเครื่องให้เรียบร้อย`
     },
     "Cpu": {
         name: "หน่วยประมวลผลกลาง",
-        image: "/images/Cpu.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Cpu.jpg",
         description: `เป็นสมองหลักของคอมพิวเตอร์ ทำหน้าที่ประมวลผลคำสั่งและข้อมูลจากโปรแกรมต่าง ๆ
 ประสิทธิภาพของ CPU ส่งผลโดยตรงต่อความเร็วในการทำงานของเครื่อง`
     },
     "Gpu": {
         name: "การ์ดแสดงผล",
-        image: "/images/gpu.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Gpu.jpg",
         description: `อุปกรณ์ประมวลผลกราฟิก ทำหน้าที่แสดงภาพและวิดีโอบนหน้าจออย่างคมชัด
 จำเป็นสำหรับงานด้านเกมมิ่ง ตัดต่อวิดีโอ และงานกราฟิกระดับสูง`
     },
     "Hdd": {
         name: "ฮาร์ดดิสก์",
-        image: "/images/hdd.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Hdd.jpg",
         description: `อุปกรณ์จัดเก็บข้อมูลถาวร ใช้บันทึกไฟล์ ระบบปฏิบัติการ และโปรแกรมต่าง ๆ
 แม้จะช้ากว่า SSD แต่ก็มีราคาย่อมเยาและความจุสูง`
     },
     "Headset": {
         name: "หูฟัง",
-        image: "/images/headset.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Headset.jpg",
         description: `อุปกรณ์ที่รวมลำโพงและไมโครโฟนไว้ด้วยกัน ใช้สำหรับฟังเสียงและสนทนาออนไลน์
 เหมาะสำหรับการเล่นเกม ประชุมทางไกล และฟังเพลง
 `
     },
     "Keyboard": {
         name: "แป้นพิมพ์",
-        image: "/images/keyboard.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/keyboard.jpg",
         description: `อุปกรณ์อินพุตที่ใช้พิมพ์ตัวอักษร คำสั่ง และควบคุมคอมพิวเตอร์
 มีหลากหลายรูปแบบ เช่น Mechanical, Membrane รองรับการใช้งานที่แตกต่างกัน`
     },
     "Monitor": {
         name: "จอภาพ",
-        image: "/images/monitor.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Monitor.jpg",
         description: `อุปกรณ์สำหรับแสดงผลลัพธ์จากคอมพิวเตอร์ เช่น ข้อความ รูปภาพ วิดีโอ
 คุณภาพของจอภาพมีผลต่อประสบการณ์ใช้งานและความละเอียดของภาพ`
     },
     "Motherboard": {
         name: "เมนบอร์ด",
-        image: "/images/motherboard.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Motherboard.jpg",
         description: `แผงวงจรหลักที่เชื่อมต่ออุปกรณ์ทุกชิ้นเข้าด้วยกัน เช่น CPU, RAM, GPU
 เป็นศูนย์กลางการสื่อสารของอุปกรณ์ภายในเครื่องคอมพิวเตอร์ทั้งหมด`
     },
     "Mouse": {
         name: "เมาส์",
-        image: "/images/mouse.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Mouse.jpg",
         description: `อุปกรณ์ชี้ตำแหน่ง ใช้ควบคุมเคอร์เซอร์บนหน้าจอและคลิกคำสั่งต่าง ๆ
 มีทั้งแบบมีสายและไร้สาย รวมถึงแบบเฉพาะทางสำหรับเกมหรือการออกแบบ`
     },
     "Ram": {
         name: "หน่วยความจำ",
-        image: "/images/Ram.jpg",
+        image: "https://pub-b63458979cf042379b57054965d6531d.r2.dev/images/Ram.jpg",
         description: `หน่วยความจำชั่วคราวที่คอมพิวเตอร์ใช้เก็บข้อมูลระหว่างการทำงานของโปรแกรม
 มีผลโดยตรงต่อความเร็วและความสามารถในการทำงานหลายอย่างพร้อมกัน`
     }
