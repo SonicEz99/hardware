@@ -79,47 +79,44 @@ const hardwareInfo = {
 
 async function initDetection() {
     try {
-        // แสดงสถานะกำลังโหลด
         updateStatus("กำลังโหลดโมเดล...", "loading");
         console.log("Loading model...");
 
-        // โหลดโมเดล
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
-        
+
         console.log("Model URL:", modelURL);
         console.log("Metadata URL:", metadataURL);
 
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
-        
+
         console.log("Model loaded successfully");
         console.log("Number of classes:", maxPredictions);
 
-        // ตั้งค่ากล้อง
-        const flip = true;
+        // Get selected camera facing mode
+        const facingMode = document.getElementById("camera-select")?.value || "user";
+
+        const flip = facingMode === "user"; // Flip only if front camera
         webcam = new tmImage.Webcam(400, 400, flip);
-        
+
         try {
-            await webcam.setup();
+            await webcam.setup({ facingMode }); // Specify front/back
             await webcam.play();
-            console.log("Webcam initialized");
+            console.log("Webcam initialized:", facingMode);
         } catch (error) {
             console.error("Webcam error:", error);
             updateStatus("ไม่สามารถเข้าถึงกล้องได้", "error");
             return;
         }
 
-        // แสดงภาพจากกล้อง
         const webcamContainer = document.getElementById("webcam-container");
         webcamContainer.innerHTML = '';
         webcamContainer.appendChild(webcam.canvas);
 
-        // เตรียมพื้นที่แสดงผล
         labelContainer = document.getElementById("label-container");
         labelContainer.innerHTML = '';
-        
-        // เริ่มการทำนาย
+
         updateStatus("กำลังตรวจจับ...", "active");
         window.requestAnimationFrame(loop);
 
@@ -128,6 +125,7 @@ async function initDetection() {
         updateStatus("ไม่สามารถโหลดโมเดลได้", "error");
     }
 }
+
 
 async function loop() {
     if (webcam && webcam.canvas) {
