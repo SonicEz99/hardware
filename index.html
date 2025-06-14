@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hardware Classifier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-gradient"></div>
+        <div class="bg-grid"></div>
+        <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">AI Hardware</span>
+                    <span class="brand-subtitle">Classifier</span>
+                </div>
+            </div>
+            <div class="nav-status" id="nav-status">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Ready</span>
+                </div>
+                <div class="status-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>AI Powered</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <sectio class="hero-section" id="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Powered by TensorFlow.js</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-gradient">ระบบจำแนกอุปกรณ์</span>
+                    <span class="title-highlight">คอมพิวเตอร์</span>
+                </h1>
+                <p class="hero-subtitle">
+                    ใช้ปัญญาประดิษฐ์ขั้นสูงในการจำแนกและระบุอุปกรณ์ฮาร์ดแวร์<br>
+                    อย่างแม่นยำและรวดเร็วผ่านกล้องเว็บแคม
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">ประเภทอุปกรณ์</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">ความแม่นยำ</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">การตรวจจับ</div>
+                    </div>
+                </div>
+                <button class="cta-button" id="start-btn" onclick="init()">
+                    <div class="button-background"></div>
+                    <div class="button-content">
+                        <i class="fas fa-camera"></i>
+                        <a href="detect.html">เริ่มการตรวจจับ</a>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <div class="orbit-ring ring-1"></div>
+                    <div class="orbit-ring ring-2"></div>
+                    <div class="orbit-ring ring-3"></div>
+                    <div class="center-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.20.0/dist/tf.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+</body>
+
+</html>
